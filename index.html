@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1 class="page-heading">Conferences</h1>
+
+  {% assign confs = (site.conferences | sort: 'date') %}
+  <table>
+      <tr><th>Date</th><th>Acronym</th><th>Title</th><th>Location</th><th>Submission date</th></tr>
+    {% for conf in confs %}
+       <tr>
+           <td>{{conf.date | date: "%b %-d, %Y" }}</td>
+           <td>{{conf.acronym}}</td>
+           <td><a href="{{conf.url}}">{{conf.title}}</a></td>
+           <td>{{conf.location}}</td>
+           <td>{{conf.submission_date}}</td>
+        </tr>
+    {% endfor %}
+  </table>
+
+</div>
