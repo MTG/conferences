@@ -9,7 +9,7 @@ layout: default
 
   <h1 class="page-heading">Conferences</h1>
 
-  {% assign confs = (paginator.conferences | rsort: 'submission_date') %}
+  {% assign confs = (site.conferences | rsort: 'submission_date') %}
   <table>
       <tr><th>Date</th><th>Acronym</th><th>Title</th><th>Location</th><th>Submission date</th></tr>
     {% for conf in confs reversed %}
