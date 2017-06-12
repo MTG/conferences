@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1 class="page-heading">Journal calls</h1>
+
+  {% assign journals = (site.journals | sort: 'date') %}
+  <table>
+      <tr><th>Journal</th><th>Special issue</th><th>Submission date</th><th>Acceptance date</th></tr>
+    {% for j in journals %}
+       <tr>
+           <td>{{j.journal}}</td>
+           <td><a href="{{j.ext_url}}">{{j.issue}}</a></td>
+           <td>{{j.submission | date: "%b %-d, %Y" }}</td>
+           <td>{{j.date | date: "%b %-d, %Y" }}</td>
+        </tr>
+    {% endfor %}
+  </table>
+
+</div>
