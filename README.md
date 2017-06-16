@@ -14,7 +14,7 @@ instructions.
 
 ### Conferences
 Fork the repository and create a new file in the `_conferences` directory.
-Name it `[confyear]-[confabbr][confyear]`. For example, `2017-ismir2017`.
+Name it `[confyear]-[confabbr][confyear].md`. For example, `2017-ismir2017.md`.
 Write the conference abbreviation in lower-case.
 The initial year field is used to sort the files in a directory listing.
 
