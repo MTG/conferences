@@ -1,0 +1,15 @@
+  <table>
+      <tr><th>Date</th><th>Acronym</th><th>Title</th><th>Location</th><th>Submission date</th></tr>
+    {% for conf in include.confs reversed %}
+    {% capture conf_date %}{{ conf.date|date: "%Y" }}{% endcapture %}
+    {% if include.all or conf_date == include.year %}
+       <tr>
+           <td>{{conf.date | date: "%b %-d, %Y"}}</td>
+           <td>{{conf.acronym}}</td>
+           <td><a href="{{conf.ext_url}}">{{conf.title}}</a></td>
+           <td>{{conf.location}}</td>
+           <td>{{conf.submission_date | date: "%b %-d, %Y"}}</td>
+        </tr>
+        {% endif %}
+    {% endfor %}
+  </table>
