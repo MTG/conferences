@@ -59,3 +59,7 @@ ext_url: # URL to call for articles for this issue
 ```
 
 ## Technical information
+
+We have separate pages for each year. This means at the end of each year, we need
+to update the `index.html` page for conferences and journals to reflect items for
+the current year, and to create a new `year.html` page for the last year.
