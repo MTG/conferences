@@ -1,0 +1,14 @@
+
+  <table>
+      <tr><th>Journal</th><th>Special issue</th><th>Submission date</th></tr>
+    {% for j in include.journals reversed %}
+    {% capture submission_date %}{{ j.submission_date|date: "%Y" }}{% endcapture %}
+    {% if submission_date == include.year %}
+       <tr>
+           <td>{{j.journal}}</td>
+           <td><a href="{{j.ext_url}}">{{j.issue}}</a></td>
+           <td>{{j.submission_date | date: "%b %-d, %Y" }}</td>
+        </tr>
+    {% endif %}
+    {% endfor %}
+  </table>
