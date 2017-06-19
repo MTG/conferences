@@ -1,9 +1,9 @@
 # Welcome to Jekyll!
 
 # Site settings
-title: MIR conference lists
+title: Music Technology conference list
 description: > # this means to ignore newlines until "baseurl:"
-  A list of upcoming music information retrieval conferences and journal calls.
+  A list of upcoming conferences and journal calls for the music technology community.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://conferences.smcnetwork.org" # the base hostname & protocol for your site
 twitter_username: mtg_upf
