@@ -19,7 +19,7 @@ Write the conference abbreviation in lower-case.
 The initial year field is used to sort the files in a directory listing.
 
 Copy this template into the file and fill in each field. Dates should be
-in `yyyy-mm-dd` format.
+in `yyyy-mm-dd` format and surrounded by quotes, e.g. `'2017-04-01'`.
 ```
 ---
 title:
@@ -34,6 +34,28 @@ location: # City, Country
 Save the file and submit your addition as a pull request.
 
 ### Journals
+Fork the repository as for conferences and create a file in the `_journals` directory.
+Name the file something like `[year]-[journal-name].md`. If there are many
+issues for this journal in the same year either add a letter to the year (`2017b-journal.md`) or
+include the issue name in the filename too.
+By convention, we name the file in lower-case, using hyphens instead of spaces, and only including
+letters and numbers in the name.
 
+Include the following content in the file. Dates should be
+in `yyyy-mm-dd` format and surrounded by quotes, e.g. `'2017-04-01'`.
+
+The `date` field is required by Jekyll, but is not used. You can set it
+to the same value as `submission_date`, or to the date that the issue
+will be published.
+
+```
+---
+submission_date: # Date that submissions are due
+date: # Same as submission_date, or publishing date
+journal: # Name of the journal
+issue: # Name of this issue
+ext_url: # URL to call for articles for this issue
+---
+```
 
 ## Technical information
