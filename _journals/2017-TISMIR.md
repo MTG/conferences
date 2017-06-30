@@ -1,7 +1,7 @@
 ---
-submission_date: Currently opened for submission.  
-date: # Same as submission_date, or publishing date. 
+submission_date: '2017-12-31'
+date: '2017-12-31'
 journal: Transactions of the International Society for Music Information Retrieval
-issue: # Name of this issue
-ext_url: http://tismir.ismir.net/ 
+issue: First issue, currently open for submissions
+ext_url: http://tismir.ismir.net/
 ---
