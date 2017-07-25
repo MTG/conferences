@@ -2,7 +2,9 @@
       <tr><th>Date</th><th>Acronym</th><th>Title</th><th>Location</th><th>Submission date</th></tr>
     {% for conf in include.confs reversed %}
     {% capture conf_date %}{{ conf.date|date: "%Y" }}{% endcapture %}
-    {% if include.all or conf_date == include.year %}
+    {% comment %} Liquid doesn't have parenthesis to force order in `if` blocks, and evaluates
+       them right-to left. Keep in this order to make `include.greaterthan` work.  {% endcomment %}
+    {% if conf_date == include.year or include.greaterthan and conf_date >= include.year%}
        <tr>
            <td>{{conf.date | date: "%b %-d, %Y"}}</td>
            <td>{{conf.acronym}}</td>
