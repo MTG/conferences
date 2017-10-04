@@ -1,0 +1,12 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1 class="page-heading">2012 Conference calls</h1>
+
+  {% assign confs = (site.conferences | sort 'submission_date') %}
+  {% include conferences.html year="2012" confs=confs %}
+
+</div>
