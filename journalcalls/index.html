@@ -7,7 +7,7 @@ layout: default
   <h1 class="page-heading">Journal calls</h1>
 
   {% assign journals = (site.journals | sort: 'submission_date') %}
-  {% include journals.html year="2017" journals=journals %}
+  {% include journals.html year="2017" journals=journals greaterthan=true %}
 
   Previous years
   <a href="2008">2008</a>
