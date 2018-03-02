@@ -25,6 +25,7 @@ in `yyyy-mm-dd` format and surrounded by quotes, e.g. `'2017-04-01'`.
 title:
 acronym:
 date: '201x-mm-dd' # Conference date. Ensure mm and dd are 2 digits
+end_date: '201x-mm-dd' # Conference end date, leave empty if unknown
 submission_date: '201x-mm-dd' # Date of submissions
 ext_url: # External URL to conference website
 location: # City, Country
