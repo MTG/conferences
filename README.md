@@ -24,8 +24,8 @@ in `yyyy-mm-dd` format and surrounded by quotes, e.g. `'2017-04-01'`.
 ---
 title:
 acronym:
-date: # Conference date
-submission_date: # Date of submissions
+date: '201x-mm-dd' # Conference date. Ensure mm and dd are 2 digits
+submission_date: '201x-mm-dd' # Date of submissions
 ext_url: # External URL to conference website
 location: # City, Country
 ---
@@ -50,8 +50,8 @@ will be published.
 
 ```
 ---
-submission_date: # Date that submissions are due
-date: # Same as submission_date, or publishing date
+submission_date: '201x-mm-dd' # Date that submissions are due
+date: '201x-mm-dd' # Same as submission_date, or publishing date
 journal: # Name of the journal
 issue: # Name of this issue
 ext_url: # URL to call for articles for this issue
