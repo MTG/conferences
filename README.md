@@ -63,4 +63,11 @@ ext_url: # URL to call for articles for this issue
 
 We have separate pages for each year. This means at the end of each year, we need
 to update the `index.html` page for conferences and journals to reflect items for
-the current year, and to create a new `year.html` page for the last year.
+the current year, and to create new `year.html` pages for the last year.
+- You need to create 2 new `year.html` files. One for the conferences and the other for the journals (the last goes inside the folder `journalcalls`).
+You can copy the content from one of the previous years and just change the year number in the heading and in `include conferences.html year="2018"`.
+- You also need to update both `index.html`: the one for conferences and the one for journals (also found inside `journalcalls`). You have to change the year on the line: 
+```{% include conferences.html year="2019" confs=confs greaterthan=true %}```
+to the following year of the year you're updating. You also have to add the following line: 
+```<a href="/2018">2018</a>```
+with the corresponding year. 
