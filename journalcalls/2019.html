@@ -1,0 +1,11 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1 class="page-heading">2019 Journal calls</h1>
+  {% assign journals = (site.journals | sort: 'submission_date') %}
+  {% include journals.html year="2019" journals=journals %}
+
+</div>
