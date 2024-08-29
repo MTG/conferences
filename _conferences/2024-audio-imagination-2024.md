@@ -1,5 +1,5 @@
 ---
-title: Audio Imagination: NeurIPS 2024 Workshop on AI-Driven Speech, Music, and Sound Generation
+title: Audio Imagination: NeurIPS 2024 Workshop on AI-Driven Speech, Music and Sound Generation
 acronym: Audio Imagination 2024
 date: '2024-12-14' # Conference date. Ensure mm and dd are 2 digits
 end_date: '2024-12-14' # Conference end date, leave empty if unknown
