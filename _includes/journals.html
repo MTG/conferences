@@ -1,16 +1,20 @@
 
-  <table>
-      <tr><th>Journal</th><th>Special issue</th><th>Submission date</th></tr>
+  <table class="journal-table">
+      <thead>
+          <tr><th>Journal</th><th>Special issue</th><th>Submission date</th></tr>
+      </thead>
+      <tbody>
     {% for j in include.journals reversed %}
     {% capture submission_date %}{{ j.submission_date|date: "%Y" }}{% endcapture %}
     {% comment %} Liquid doesn't have parenthesis to force order in `if` blocks, and evaluates
        them right-to left. Keep in this order to make `include.greaterthan` work.  {% endcomment %}
     {% if submission_date == include.year or include.greaterthan and submission_date >= include.year %}
        <tr>
-           <td>{{j.journal}}</td>
-           <td><a href="{{j.ext_url}}">{{j.issue}}</a></td>
-           <td>{{j.submission_date | date: "%b %-d, %Y" }}</td>
+           <td data-label="Journal">{{j.journal}}</td>
+           <td data-label="Special issue"><a href="{{j.ext_url}}">{{j.issue}}</a></td>
+           <td data-label="Submission date">{{j.submission_date | date: "%b %-d, %Y" }}</td>
         </tr>
     {% endif %}
     {% endfor %}
+      </tbody>
   </table>

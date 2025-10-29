@@ -175,6 +175,126 @@
     font-size: 20px;
 }
 
+.page-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: $spacing-unit;
+}
+
+.page-content th,
+.page-content td {
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid $grey-color-light;
+}
+
+@media screen and (min-width: $on-laptop + 1px) {
+    .page-content th,
+    .page-content td {
+        white-space: nowrap;
+    }
+
+    .page-content th:nth-child(3),
+    .page-content td:nth-child(3) {
+        min-width: 360px;
+        white-space: normal;
+    }
+
+    .page-content th:nth-child(1),
+    .page-content td:nth-child(1) {
+        min-width: 140px;
+    }
+
+    .page-content th:nth-child(2),
+    .page-content td:nth-child(2) {
+        min-width: 120px;
+    }
+
+    .page-content th:nth-child(4),
+    .page-content td:nth-child(4) {
+        min-width: 180px;
+    }
+
+    .page-content th:nth-child(5),
+    .page-content td:nth-child(5) {
+        min-width: 180px;
+    }
+}
+
+@include media-query($on-palm) {
+    .page-content table {
+        display: block;
+        border: 0;
+    }
+
+    .page-content thead {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+        display: none;
+    }
+
+    .page-content tr {
+        display: block;
+        border: 1px solid $grey-color-light;
+        border-radius: 6px;
+        margin-bottom: $spacing-unit * 0.5;
+        padding: 0.25rem 0;
+        background-color: $background-color;
+    }
+
+    .page-content td {
+        display: block;
+        padding: 0.55rem 0.75rem;
+        border-bottom: 0;
+        word-break: break-word;
+    }
+
+    .page-content td + td {
+        border-top: 1px solid $grey-color-light;
+    }
+
+    .page-content td::before {
+        display: inline;
+        font-weight: 600;
+        color: $grey-color-dark;
+        content: attr(data-label) ": ";
+        margin-right: 0.35rem;
+    }
+
+    .page-content td:last-child {
+        padding-bottom: 0.65rem;
+    }
+
+    .conference-table td:nth-child(1)::before {
+        content: none;
+        margin-right: 0;
+    }
+
+    .conference-table td:nth-child(2) {
+        display: none;
+    }
+
+    .conference-table td:nth-child(3) {
+        border-top: 0;
+    }
+
+    .conference-table td:nth-child(3)::before {
+        content: attr(data-acronym) ": ";
+        margin-right: 0.35rem;
+    }
+
+    .conference-table td:nth-child(3)[data-acronym=""]::before {
+        content: "Title: ";
+    }
+}
+
 .post-list {
     margin-left: 0;
     list-style: none;

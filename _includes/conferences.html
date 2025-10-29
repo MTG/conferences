@@ -1,17 +1,21 @@
-  <table>
-      <tr><th>Date</th><th>Acronym</th><th>Title</th><th>Location</th><th>Submission date</th></tr>
+  <table class="conference-table">
+      <thead>
+          <tr><th>Date</th><th>Acronym</th><th>Title</th><th>Location</th><th>Submission date</th></tr>
+      </thead>
+      <tbody>
     {% for conf in include.confs reversed %}
     {% capture conf_date %}{{ conf.date|date: "%Y" }}{% endcapture %}
     {% comment %} Liquid doesn't have parenthesis to force order in `if` blocks, and evaluates
        them right-to left. Keep in this order to make `include.greaterthan` work.  {% endcomment %}
     {% if conf_date == include.year or include.greaterthan and conf_date >= include.year%}
        <tr>
-           <td>{{conf.date | date: "%b %-d, %Y"}}</td>
-           <td>{{conf.acronym}}</td>
-           <td><a href="{{conf.ext_url}}">{{conf.title}}</a></td>
-           <td>{{conf.location}}</td>
-           <td>{{conf.submission_date | date: "%b %-d, %Y"}}</td>
+           <td data-label="Date">{{conf.date | date: "%b %-d, %Y"}}</td>
+           <td data-label="Acronym">{{conf.acronym}}</td>
+           <td data-label="Title" data-acronym="{{ conf.acronym | strip }}"><a href="{{conf.ext_url}}">{{conf.title}}</a></td>
+           <td data-label="Location">{{conf.location}}</td>
+           <td data-label="Submission date">{{conf.submission_date | date: "%b %-d, %Y"}}</td>
         </tr>
         {% endif %}
     {% endfor %}
+      </tbody>
   </table>
