@@ -10,7 +10,7 @@ layout: default
 
   <h1 class="page-heading">Conferences</h1>
 
-  {% assign confs = (site.conferences | sort 'submission_date') %}
+  {% assign confs = site.conferences | sort: 'submission_date' %}
   {% include conferences.html year="2025" confs=confs greaterthan=true %}
 
 
