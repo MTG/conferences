@@ -1,6 +1,6 @@
   <table class="conference-table">
       <thead>
-          <tr><th>Date</th><th>Acronym</th><th>Title</th><th>Location</th><th>Submission date</th></tr>
+          <tr><th>Date</th><th>Conference</th><th>Location</th><th>Submission date</th></tr>
       </thead>
       <tbody>
     {% for conf in include.confs reversed %}
@@ -10,8 +10,13 @@
     {% if conf_date == include.year or include.greaterthan and conf_date >= include.year%}
        <tr>
            <td data-label="Date">{{conf.date | date: "%b %-d, %Y"}}</td>
-           <td data-label="Acronym">{{conf.acronym}}</td>
-           <td data-label="Title" data-acronym="{{ conf.acronym | strip }}"><a href="{{conf.ext_url}}">{{conf.title}}</a></td>
+           <td data-label="Conference">
+               {% assign trim_acronym = conf.acronym | strip %}
+               {% if trim_acronym != "" %}
+               <span class="conference-table__acronym">{{ trim_acronym }}</span>
+               {% endif %}
+               <span class="conference-table__title"><a href="{{conf.ext_url}}">{{conf.title}}</a></span>
+           </td>
            <td data-label="Location">{{conf.location}}</td>
            <td data-label="Submission date">{{conf.submission_date | date: "%b %-d, %Y"}}</td>
         </tr>
